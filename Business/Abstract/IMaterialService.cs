@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-    public interface IMetarialService
+    public interface IMaterialService
     {
         ICollection<Metarial> GetAll();
         Metarial GetSingleSubCategory(int id);

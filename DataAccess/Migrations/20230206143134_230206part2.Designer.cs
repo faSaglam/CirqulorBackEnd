@@ -4,6 +4,7 @@ using DataAccess.Concreate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(CirqularDbContext))]
-    partial class CirqularDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230206143134_230206part2")]
+    partial class _230206part2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -346,6 +348,33 @@ namespace DataAccess.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Entities.Concreate.Product", b =>
+                {
+                    b.Property<int>("ProductID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductID"), 1L, 1);
+
+                    b.Property<string>("ProductDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("SubCategoryID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ProductID");
+
+                    b.HasIndex("SubCategoryID");
+
+                    b.ToTable("Product");
+                });
+
             modelBuilder.Entity("Entities.Concreate.ThermalProperty", b =>
                 {
                     b.Property<int>("ThermalPropertyID")
@@ -516,6 +545,17 @@ namespace DataAccess.Migrations
                     b.Navigation("MaterialMetric");
                 });
 
+            modelBuilder.Entity("Entities.Concreate.Product", b =>
+                {
+                    b.HasOne("Entities.Concreate.Metarial", "SubCategory")
+                        .WithMany("Products")
+                        .HasForeignKey("SubCategoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SubCategory");
+                });
+
             modelBuilder.Entity("Entities.Concreate.ThermalProperty", b =>
                 {
                     b.HasOne("Entities.Concreate.MaterialMetric", "MaterialMetric")
@@ -556,6 +596,8 @@ namespace DataAccess.Migrations
             modelBuilder.Entity("Entities.Concreate.Metarial", b =>
                 {
                     b.Navigation("Definitions");
+
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("Entities.Concreate.Origin", b =>

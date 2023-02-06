@@ -210,7 +210,45 @@ namespace DataAccess.Extentions.EfSeedData
 
                 );
         }
+        public static void SeedForm(this ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Form>().HasData(
+                new Form()
+                {
+                    FormID = 33111,
+                    FormName = "Fiber",
+                    OriginID = 3311
+                });
+        }
+        public static void SeedPlant(this ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Plant>().HasData(
 
+
+                new Plant()
+                {
+                    PlantID = 331111,
+                    PlantName = "Sisal",
+                    FormID = 33111,
+                    PlantOfMaterialMetricID=1
+                        
+
+                });
+        }
+
+        public static void SeedMaterialMetric(this ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<MaterialMetric>().HasData(
+
+
+                new MaterialMetric()
+                {
+                    MaterialMetricID= 1,
+                    Notes="Test test test",
+                    
+
+                });
+        }
 
 
 

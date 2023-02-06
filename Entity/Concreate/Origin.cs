@@ -15,5 +15,7 @@ namespace Entities.Concreate
         public int DefinationID { get; set; }
 
         public Definition Definition { get; set; }
+
+        public ICollection<Form> Forms { get; set; }
     }
 }

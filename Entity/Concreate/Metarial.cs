@@ -18,6 +18,6 @@ namespace Entities.Concreate
         public Taxonomy Taxonomy { get; set; }
 
         public ICollection<Definition> Definitions { get; set; }
-        public ICollection<Product> Products { get; set; } 
+       
     }
 }

@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace Business.Concreate
 {
-    public class MetarialManager : IMetarialService
+    public class MaterialManager : IMaterialService
     {
         private readonly IMetarialDal _metarialDal;
-        public MetarialManager(IMetarialDal metarialDal)
+        public MaterialManager(IMetarialDal metarialDal)
         {
             _metarialDal = metarialDal;
         }

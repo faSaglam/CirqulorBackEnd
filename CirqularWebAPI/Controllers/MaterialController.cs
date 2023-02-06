@@ -6,11 +6,11 @@ namespace CirqularWebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MetarialController : ControllerBase
+    public class MaterialController : ControllerBase
     {
-        private IMetarialService _metarialService;
+        private IMaterialService _metarialService;
 
-        public MetarialController(IMetarialService metarialService)
+        public MaterialController(IMaterialService metarialService)
         {
             _metarialService= metarialService;
         }

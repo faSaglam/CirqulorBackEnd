@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concreate.EntityFramework.Configurations
 {
-    public class MetarialMapping:IEntityTypeConfiguration<Metarial>
+    public class MaterialMapping:IEntityTypeConfiguration<Metarial>
     {
         public void Configure(EntityTypeBuilder<Metarial> builder)
         {

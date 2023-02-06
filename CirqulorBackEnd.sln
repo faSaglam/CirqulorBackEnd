@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entity\Entities.csproj", "{D3B012AC-7833-4B31-88B1-F828053ECBC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CirqularWebAPI", "CirqularWebAPI\CirqularWebAPI.csproj", "{2A513C80-50F2-4A8D-A6C7-88126934E17A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CirqulorWebAPI", "CirqularWebAPI\CirqulorWebAPI.csproj", "{2A513C80-50F2-4A8D-A6C7-88126934E17A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
